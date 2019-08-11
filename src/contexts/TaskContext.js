@@ -1,18 +1,21 @@
-import React, {createContext, useReducer, useEffect} from 'react'
-import {taskReducer} from '../reducers/taskReducer';
+import React, {createContext, useState} from 'react'
+import uuid from 'uuid/v1'
 
 export const TaskContext = createContext();
 
 const TaskContextProvider = (props) => {
-    const [tasks, dispatch] = useReducer(taskReducer, ['do sth'], ()=>{
-        const localData =localStorage.getItem('tasks');
-        return localData ? JSON.parse(localData) : [];
-    });
-    useEffect(() =>{
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-    }, [tasks])
+    const [tasks, setTasks] = useState([
+        {title: 'learn react', id: 1},  
+        {title: 'clean room', id: 2}
+    ]);
+    const addTask = (title) => {
+        setTasks([...tasks, {title, id: uuid()}])
+    };
+    const removeTask = (id) => {
+        setTasks(tasks.filter(task => task.id !== id));
+    }
     return(
-        <TaskContextProvider value={{tasks, dispatch}}>
+        <TaskContextProvider value={{tasks, addTask, removeTask }}>
             {props.children}
         </TaskContextProvider>
     );
