@@ -12,3 +12,15 @@ body {
   font-size: 1.3rem;
   text-align: center;
 }
+.toDoList{
+  text-align: center;
+  font-size: 1.4rem;
+}
+li{
+  list-style: none;
+  padding: 1rem;
+}
+li:hover{
+  cursor: pointer;
+  text-decoration: line-through;
+}

@@ -1,15 +1,15 @@
 import React, {useContext} from 'react'
 import { TaskContext } from '../context/TaskContext';
-
+import RemoveTask from './RemoveTask';
 
 const ToDoList = () => {
     const {tasks} = useContext(TaskContext);
     return ( 
-        <div className="container">
+        <div className="toDoList">
             <ul>
                 {tasks.map(task =>{
                     return(
-                        <li key={task.id}>{ task.title }</li>
+                        <RemoveTask task={task} key={task.id}/>
                     )
                 })}
             </ul>

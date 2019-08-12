@@ -2,14 +2,16 @@ import React from 'react';
 import TaskContextProvider from './context/TaskContext';
 import Navbar from './components/Navbar';
 import ToDoList from './components/ToDoList';
+import NewTaskForm from './components/TaskForm';
 
 function App() {
   return (
     <div className="App">
       
-      <Navbar/>
       <TaskContextProvider>
+        <Navbar/>
         <ToDoList/>
+        <NewTaskForm/>
       </TaskContextProvider>
     </div>
   );
