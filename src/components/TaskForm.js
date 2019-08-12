@@ -15,7 +15,7 @@ const NewTaskForm = () =>{
         <form onSubmit={submitHandle}>
             <input type="text" placeholder="Add new task" value={title}
             onChange={(e) => setTitle(e.target.value)} required/>
-            <input type="submit" value="add task"/>
+            <button type="submit" >Add task</button>
         </form>
     )
 }

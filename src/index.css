@@ -8,19 +8,46 @@ body {
 }
 
 .navbar{
-  padding: 0.5rem;
-  font-size: 1.3rem;
+  padding: 0.2rem;
+  font-size: 2rem;
   text-align: center;
+  background-color: #DFDFDF;
 }
+
 .toDoList{
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 2rem;
 }
 li{
   list-style: none;
   padding: 1rem;
 }
+ul{
+  background-color: #DFDFDF;
+  margin: 2rem;
+}
 li:hover{
   cursor: pointer;
   text-decoration: line-through;
+}
+form{
+  text-align: center;
+  
+}
+form input{
+  padding: 1.5rem;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  font-size: 1.6rem;
+  margin: 1rem;
+
+}
+form button{
+  cursor: pointer;
+  background-color: lightgray;
+  border-radius: 9px;
+  padding: 0.5rem;
+  border: none;
+  font-size: 1.6rem;
 }

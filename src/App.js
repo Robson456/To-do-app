@@ -10,8 +10,8 @@ function App() {
       
       <TaskContextProvider>
         <Navbar/>
-        <ToDoList/>
         <NewTaskForm/>
+        <ToDoList/>
       </TaskContextProvider>
     </div>
   );
