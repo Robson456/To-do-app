@@ -1,20 +1,20 @@
-import React, { useContext } from 'react';
-import ToDo from './ToDo';
-import {TaskContext} from '../contexts/TaskContext';
+import React, {useContext} from 'react'
+import { TaskContext } from '../context/TaskContext';
 
-const ToDoList = () =>{
+
+const ToDoList = () => {
     const {tasks} = useContext(TaskContext);
-    return tasks.length ? (
-        <div className="toDo-list">
+    return ( 
+        <div className="container">
             <ul>
-                {tasks.map(task => {
-                    return ( <ToDo task={task} key={task.id}/>);
+                {tasks.map(task =>{
+                    return(
+                        <li key={task.id}>{ task.title }</li>
+                    )
                 })}
             </ul>
         </div>
-    ) : (
-        <div className="empty">No to do's left</div>
-    ) 
+     );
 }
-
+ 
 export default ToDoList;
